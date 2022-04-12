@@ -1,1 +1,1 @@
-# iot-hub-custom-endpoint
+# iot-hub-dps
