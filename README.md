@@ -7,23 +7,31 @@ We cover both Individual Enrollments and Group Enrollments procedures with DPS. 
 
 ## DPS Group Enrollment
 
-### create test certificate
-read - https://docs.microsoft.com/en-us/azure/iot-hub/tutorial-x509-openssl
-follow - https://github.com/dotnet/samples/blob/main/iot/dotnet-iot-and-nanoframework/create-certificate.md
-demo client - https://github.com/MicrosoftLearning/MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer/blob/master/Allfiles/Labs/06-Automatic%20Enrollment%20of%20Devices%20in%20DPS/Final/ContainerDevice/Program.cs
+### create test certificates
+Microsoft docs for details - https://docs.microsoft.com/en-us/azure/iot-hub/tutorial-x509-openssl
+
+A demo client from Microsoft - https://github.com/MicrosoftLearning/MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer/blob/master/Allfiles/Labs/06-Automatic%20Enrollment%20of%20Devices%20in%20DPS/Final/ContainerDevice/Program.cs
 
 ### way 1 (the way I did it):
-https://github.com/dotnet/samples/blob/main/iot/dotnet-iot-and-nanoframework/create-certificate.md
+Minimumal docs - https://github.com/dotnet/samples/blob/main/iot/dotnet-iot-and-nanoframework/create-certificate.md
 
 ### way 2:
-Download the certGen.sh, openssl_root_ca.cnf, and openssl_device_intermediate_ca.cnf from https://github.com/Azure/azure-iot-sdk-c/tree/main/tools/CACertificates
-Follow - https://github.com/Azure/azure-iot-sdk-c/blob/main/tools/CACertificates/CACertificateOverview.md
+Download the following from https://github.com/Azure/azure-iot-sdk-c/tree/main/tools/CACertificates
+1. certGen.sh, 
+2. openssl_root_ca.cnf, 
+3. and openssl_device_intermediate_ca.cnf 
+
+Then follow - https://github.com/Azure/azure-iot-sdk-c/blob/main/tools/CACertificates/CACertificateOverview.md
 
 
 ## TempSimulator
-Add property in key value pair to set routing. Add Message Routing rule in azure iot-hub.
+I added a dummy temperature simulator built in .net core 3.1. 
+Add properties in key value pair while sending the telemetry data. Add Message Routing rule in azure iot-hub according to those key value pair that were added in the client.
 
 
 ## Function App
-Built-in-endpoint
-custorm Blob-endpoint
+There are two functions apps 
+1. Built-in-endpoint - Listening to default iot-hub.
+2. Blob-endpoint - Listening to blob storage for those messages that were routed to blob container.
+
+
