@@ -1,2 +1,8 @@
 certificates/
 .vs/
+dps/bin
+dps/obj
+EndPoints/bin
+EndPoints/obj
+TempSimulator/bin
+TempSimulator/obj
