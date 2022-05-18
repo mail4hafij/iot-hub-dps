@@ -1,4 +1,4 @@
-# iot-hub-dps
+# iot-hub-dps-509cert
 The idea here is to deploy iot-devices at scale using Azure Device Provisioning Service (DPS). The following topics are covered
 
 1. Individual Device Enrollments procedure with DPS.
